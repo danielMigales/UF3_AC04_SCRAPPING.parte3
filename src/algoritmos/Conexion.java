@@ -1,4 +1,4 @@
-package base.algoritmos;
+package algoritmos;
 
 import com.mysql.jdbc.Connection;
 import com.mysql.jdbc.PreparedStatement;

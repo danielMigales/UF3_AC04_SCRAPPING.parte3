@@ -1,15 +1,14 @@
-package base.algoritmos;
+package algoritmos;
 
 /**
  * @author Daniel
  */
-
 public class Links {
-    
+
     int numero;
     String href;
     String titulo;
-    
+
     public Links(int numero, String href) {
         this.numero = numero;
         this.href = href;
@@ -49,5 +48,5 @@ public class Links {
     public String toString() {
         return "NUMERO: " + numero + "\tHREF:" + href + "\n\t\tDESCRIPCION: " + titulo;
     }
-       
+
 }
