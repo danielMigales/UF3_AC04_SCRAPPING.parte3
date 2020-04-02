@@ -9,11 +9,24 @@ public class Links {
     int numero;
     String href;
     String titulo;
+    
+    public Links(int numero, String href) {
+        this.numero = numero;
+        this.href = href;
+    }
 
     public Links(int numero, String href, String titulo) {
         this.numero = numero;
         this.href = href;
         this.titulo = titulo;
+    }
+
+    public int getNumero() {
+        return numero;
+    }
+
+    public void setNumero(int numero) {
+        this.numero = numero;
     }
 
     public String getHref() {
@@ -32,30 +45,9 @@ public class Links {
         this.titulo = titulo;
     }
 
-    public int getNumero() {
-        return numero;
-    }
-
-    public void setNumero(int numero) {
-        this.numero = numero;
-    }
-
     @Override
     public String toString() {
-        String link = "Link " + numero + ":" + "\nHref: " + href + "\nTitulo: " + titulo;
-        return link;
+        return "NUMERO: " + numero + "\tHREF:" + href + "\n\t\tDESCRIPCION: " + titulo;
     }
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
+       
 }
