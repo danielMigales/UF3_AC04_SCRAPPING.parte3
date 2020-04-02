@@ -1,4 +1,4 @@
-package base;
+package base.algoritmos;
 
 /**
  * @author Daniel
@@ -42,7 +42,7 @@ public class Links {
 
     @Override
     public String toString() {
-        String link = "\nLink " + numero + ":" + "\nHref: " + href + "\nTitulo: " + titulo;
+        String link = "Link " + numero + ":" + "\nHref: " + href + "\nTitulo: " + titulo;
         return link;
     }
     
