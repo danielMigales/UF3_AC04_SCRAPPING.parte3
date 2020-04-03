@@ -1,7 +1,8 @@
 package algoritmos;
 
 /**
- * @author Daniel
+ * @author Daniel Migales Puertas
+ *
  */
 public class Links {
 
@@ -47,8 +48,7 @@ public class Links {
     @Override
     public String toString() {
 
-
-        return "NUMERO: " + numero + "\tHREF:" + href + "\n\t\tDESCRIPCION: " + titulo;
+        return "Numero: " + numero + "\tEnlace:" + href + "\n\t\tDescripcion: " + titulo;
     }
 
 }

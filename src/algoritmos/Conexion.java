@@ -11,7 +11,8 @@ import java.util.logging.Level;
 import java.util.logging.Logger;
 
 /**
- * @author Daniel
+ * @author Daniel Migales Puertas
+ * 
  */
 public class Conexion {
 
@@ -106,7 +107,8 @@ public class Conexion {
                 int id = rs.getInt("id");
                 String campo1 = rs.getString("url");
                 String campo2 = rs.getString("descripcion");
-                System.out.println("ID: " + id + "\nEnlace: " + campo1 + "\nDescripcion: " + campo2 + "\n");
+                String campo3 = rs.getString("contador");
+                System.out.println("ID: " + id + "\nEnlace: " + campo1 + "\nDescripcion: " + campo2 + "\nContador: " + campo3 + "\n");
                 resultados++;
             }
             if (resultados == 0) {
@@ -121,5 +123,4 @@ public class Conexion {
             }
         }
     }
-
 }
