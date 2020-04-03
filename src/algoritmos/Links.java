@@ -48,7 +48,7 @@ public class Links {
     @Override
     public String toString() {
 
-        return "Numero: " + numero + "\tEnlace:" + href + "\n\t\tDescripcion: " + titulo;
+        return "Numero: " + numero + "\tEnlace:" + href + "\n\t\tDescripcion: " + titulo + "\n";
     }
 
 }

@@ -16,6 +16,8 @@ import java.util.logging.Logger;
  */
 public class Conexion {
 
+     //SE CREA AUTOMATICAMENTE LA BASE DE DATOS scrapping Y LA TABLA datosWeb. SOLO HAY QUE ACTIVAR XAMPP Y TENER USUARIO, PASSWORD Y PUERTO POR DEFECTO
+    
     //datos de la base de datos 
     private static Connection conexion;
     private static final String DRIVER = "com.mysql.jdbc.Driver";

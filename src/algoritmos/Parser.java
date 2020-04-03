@@ -19,7 +19,7 @@ import org.jsoup.select.Elements;
 /**
  *
  * @author Daniel Migales Puertas
- * 
+ *
  */
 public class Parser {
 
@@ -42,12 +42,13 @@ public class Parser {
         return response.statusCode();
     }
 
-    //Metodo para leer una pagina web en busca de enlaces y su descripcion 
+    //Metodo para leer una pagina web en busca de enlaces y su descripcion . A su vez llama al resto de metodos pasando los diferentes arraylist
     public void analizarUrl() throws IOException {
 
         System.out.println("Introduzca la url (formato correcto: www.ejemplo.com) ");
         Scanner entradaString = new Scanner(System.in);
-        String url = "http://" + entradaString.nextLine();
+        String urlCorta = entradaString.nextLine();
+        String url = "http://" + urlCorta;
         System.out.println("\n**************************************************\n");
 
         //primero se comprueba que la web este disponible
@@ -58,7 +59,7 @@ public class Parser {
             Elements links = doc.select("a[href]");
             int contador = 1;
 
-            System.out.println("LISTADO DE TODOS LOS ENLACES ENCONTRADOS: \n");
+            System.out.println("LISTADO DE TODOS LOS ENLACES ENCONTRADOS EN LA WEB: \n");
             //recorro los elementos que sean un link href
             for (Element link : links) {
                 //obtengo los dos elementos
@@ -73,6 +74,8 @@ public class Parser {
 
             cortarUrl(listaLinks);
             buscarDuplicados(listaLinksCortos);
+            
+            contarDuplicados(listaLinksCortos); //METODO NO IMPLEMENTADO PORQUE ESTA INCOMPLETO
 
             //GUARDAR LOS DATOS DIRECTAMENTE EN LA BASE DE DATOS 
             try {
@@ -85,12 +88,12 @@ public class Parser {
         } else {
             System.out.println("El Status Code es: " + comprobarUrl(url) + " Ha sido bajo.");
         }
-
     }
 
+    //metodo para cortar las url encontradas a partir del primer / . Crea otro arraylist diferente con las url cortas
     public void cortarUrl(ArrayList<Links> listaLinks) {
 
-        System.out.println("LISTADO DE LAS URL'S RECORTADAS: \n");
+        System.out.println("LISTADO DE TODAS LAS URL'S ENCONTRADAS EN FORMATO CORTO: \n");
         int contador = 1;
         String href = null;
         //el elemento href lo recorto usando como separacion la barra, quedando separado en tres partes: https , www.xxxx.com , resto de datos    
@@ -108,6 +111,30 @@ public class Parser {
         System.out.println("\n**************************************************\n");
     }
 
+   //metodo para contar cuantas veces se repite una misma url en el arraylist METODO NO IMPLEMENTADO PORQUE ESTA INCOMPLETO
+    public void contarDuplicados(ArrayList<Links> listaLinks) {
+
+        int contador = 1;
+        boolean repetido = false;
+
+        for (int i = 0; i < listaLinks.size(); i++) {
+            for (int j = 0; j < listaLinks.size(); j++) {
+                if (listaLinks.get(i) == listaLinks.get(j)) {
+                    contador++;
+                    repetido = true;
+                    break;
+                }
+            }
+            if (repetido) {
+                //aqui ya no se que hacer si es repetido
+            } else {
+
+            }
+        }
+        System.out.println("\n**************************************************\n");
+    } 
+        
+    //metodo que mediante un hashmap busca los duplicados y crea otro arraylist sin ellos
     public void buscarDuplicados(ArrayList<Links> listaLinks) {
 
         System.out.println("LISTADO FINAL DE URL'S: \n");
@@ -132,5 +159,7 @@ public class Parser {
 
         //FALTA QUE EL CONTADOR CUENTE LAS VECES QUE SE REPITE CADA URL....NO TENGO NI IDEA DE COMO HACERLO
     }
+
+    
 
 }

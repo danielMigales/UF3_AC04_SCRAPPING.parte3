@@ -4,6 +4,7 @@ package base;
  * @author Daniel Migales Puertas
  * 
  */
+//Ejercicio3:
 //Realiza una araña web que a partir de una url obtenga de una pagina web los diferentes enlaces.
 //Descargaremos la información que se encuentre en la web, url+texto, y la almacenaremos en una base de datos. 
 //Cuando nos encontremos con un url+texto incrementaremos un contador.
